@@ -1,0 +1,70 @@
+/* line 22, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+#preso, .slide {
+  width: 1280px;
+  height: 800px;
+  background-color: #fdf6e3;
+}
+
+/* line 31, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+#timeInfo {
+  display: inline;
+  float: right;
+}
+
+/* line 35, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+pre.sh_sourceCode, .sh_yaml, .sh_haml {
+  background-color: #002b36;
+  -webkit-box-shadow: 0 0 5px #073642;
+  -moz-box-shadow: 0 0 5px #073642;
+  -o-box-shadow: 0 0 5px #073642;
+  box-shadow: 0 0 5px #073642;
+}
+/* line 40, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+pre.sh_sourceCode code, .sh_yaml code, .sh_haml code {
+  color: #fdf6e3;
+}
+/* line 44, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+pre.sh_sourceCode .sh_string, .sh_yaml .sh_string, .sh_haml .sh_string {
+  color: #dc322f;
+}
+/* line 48, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+pre.sh_sourceCode .sh_symbol, .sh_yaml .sh_symbol, .sh_haml .sh_symbol {
+  color: #cb4b16;
+}
+/* line 52, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+pre.sh_sourceCode .sh_comment, .sh_yaml .sh_comment, .sh_haml .sh_comment {
+  color: #586e75;
+}
+/* line 56, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+pre.sh_sourceCode .sh_keyword, .sh_yaml .sh_keyword, .sh_haml .sh_keyword {
+  color: #b58900;
+}
+/* line 60, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+pre.sh_sourceCode .sh_number, .sh_yaml .sh_number, .sh_haml .sh_number {
+  color: #2aa198;
+}
+/* line 64, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+pre.sh_sourceCode .sh_function, .sh_yaml .sh_function, .sh_haml .sh_function {
+  color: #859900;
+}
+
+/* line 69, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+#footer {
+  width: 1260px;
+}
+
+/* line 73, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+body {
+  color: #002b36;
+  background-color: #93a1a1;
+}
+
+/* line 78, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+h1 {
+  color: #002b36;
+}
+
+/* line 82, /Users/john/Projects/jasmine-headless-webkit-presentation/app/assets/stylesheets/presentation.css.scss */
+h2 {
+  color: #073642;
+}

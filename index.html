@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>jasmine-headless-webkit</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/presentation.css" type="text/css"/>
+  
+
+  
+    <script type="text/javascript" src="file/presentation.js"></script>
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/1">
+<h1><code>jasmine-headless-webkit</code></h1>
+
+<h2>The fastest way to test your browser-targeted JavaScript!</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/2">
+<h1>JavaScript Testing</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/3">
+<h1>Ajax-y apps are complex nowadays!</h1>
+
+<ul>
+<li>jQuery</li>
+<li>Backbone</li>
+<li>Tons of other JavaScripty things</li>
+<li>Client/server communication</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/4">
+<h1>A lot can break!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/5">
+<h1>Lots of different ways to test</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/6">
+<h1>Standalone JavaScript Engines</h1>
+
+<ul>
+<li>Node.JS</li>
+<li>EnvJS</li>
+<li>Rhino</li>
+<li>...and others!</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/7">
+<h1>Great for testing JS Libraries</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/8">
+<h1>Not so great in testing in "real" browsers</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/9">
+<h1>Fake DOMs aren't quite the same</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/10">
+<h1>Integration testing tools</h1>
+
+<ul>
+<li>Capybara</li>
+<li>Cucumber</li>
+<li>Selenium</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/11">
+<h1>Very thorough</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/12">
+<h1>Sloooooow</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/13">
+<h1>Server-side dependency management</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/14">
+<h1>Sprockets</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/15">
+<h1>Continuous testing</h1>
+
+<ul>
+<li>Guard</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/16">
+<h1>A JS testing tool that...</h1>
+
+<ul>
+<li>Runs fast</li>
+<li>In a real browser</li>
+<li>That supports modern Ruby webapp conventions</li>
+<li>Is built for continuous testing</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/17">
+<h1>Enter <code>jasmine-headless-webkit</code></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/1">
+<h1>Installing</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/2">
+<h1>Qt 4.7 or above</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/3">
+<h1><code>gem install jasmine-headless-webkit</code></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/4">
+<h1>Gemfile</h1>
+
+<pre class="sh_ruby"><code>gem 'jasmine-headless-webkit', '~&gt; 0.8.0'</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/5">
+<h1>Gemfile</h1>
+
+<pre class="sh_ruby"><code>gem 'jasmine-headless-webkit', '~&gt; 0.8.0'
+
+gem 'guard'
+gem 'guard-jasmine-headless-webkit'</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/6">
+<h1>Rails 3.1 Application</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/7">
+<h1>spec/javascripts/support/jasmine.yml</h1>
+
+<pre class="sh_yaml"><code>src_dir: app/assets/javascripts
+asset_paths:
+- lib/assets/javascripts
+- vendor/assets/javascripts
+src_files: [ '**/*' ]
+
+spec_dir: spec/javascripts
+spec_files: [ '**/*[Ss]pec.*' ]
+helpers: [ 'helpers/**/*' ]</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/8">
+<h1>Load Paths</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/9">
+<h1>Sprockets and Jasmine load files differently</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/10">
+<pre class="sh_ruby"><code># ...somewhere in JHW...
+env = Sprockets::Environment.new
+
+env['application.js'].to_s #=&gt; compiled JS</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/11">
+<h1>spec/javascripts/support/jasmine.yml</h1>
+
+<pre class="sh_yaml"><code>src_dir: app/assets/javascripts
+asset_paths:
+- lib/assets/javascripts
+- vendor/assets/javascripts
+spec_dir: spec/javascripts</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/12">
+<pre class="sh_ruby"><code># ...somewhere in JHW...
+env.append_path "app/assets/javascripts"
+env.append_path "lib/assets/javascripts"
+env.append_path "vendor/assets/javascripts"
+env.append_path "spec/javascripts"</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/13">
+<pre class="sh_javascript"><code>//= require backbone/models/cat
+//= require backbone/collections/cats
+//= require backbone/views/global_view
+
+class window.CatsView extends GlobalView</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/14">
+<h1>Sprockets loading</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/15">
+<h1>Jasmine loading?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/16">
+<pre class="sh_yaml"><code>src_dir: app/assets/javascripts
+src_files: [ '**/*' ]
+
+spec_dir: spec/javascripts
+spec_files: [ '**/*[Ss]pec.*' ]
+helpers: [ 'helpers/**/*' ]</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/17">
+<pre class="sh_ruby"><code>Dir["app/assets/javascripts/**/*"]
+Dir["spec/javascripts/**/*[Ss]pec.*"]
+Dir["spec/javascripts/helpers/**/*"]</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/18">
+<h1>JHW ensures that no file is loaded twice</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/19">
+<h1>Ensures Sprockets dependencies are loaded in the right order</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/1">
+<h1>Writing Jasmine Tests</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/2">
+<h1>RSpec?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/3">
+<pre class="sh_ruby"><code>(2 + 2).should == 4</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/4">
+<h1>Jasmine!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/5">
+<pre class="sh_javascript"><code>expect(2 + 2).toEqual(4)</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/6">
+<h1>RSpec?</h1>
+
+<pre class="sh_ruby"><code>describe "CatsView" do
+  before do
+    @cats = [ stub ]
+  end
+
+  it 'should show cats' do
+    render
+
+    rendered.should have_css('#cats li')
+  end
+end</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/7">
+<h1>JavaScript?</h1>
+
+<pre class="sh_javascript"><code>describe("CatsView", function() {
+  var view;
+
+  beforeEach(function() {
+    view = new CatsView({collection: [ {} ]})
+  }):
+
+  it('should show cats', function() {
+    view.render()
+
+    expect($(view.el)).toContain('#cats li')
+  });
+});</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/8">
+<h1>CoffeeScript?</h1>
+
+<pre class="sh_coffeescript"><code>describe "CatsView", -&gt;
+  view = null
+
+  beforeEach -&gt;
+    view = new CatsView(collection: [ {} ])
+
+  it 'should show cats', -&gt;
+    view.render()
+
+    expect($(view.el)).toContain('#cats li')</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/9">
+<h1>Plenty of resources to learn Jasmine itself</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/10">
+<h1>tryjasmine.com</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/11">
+<h1>But once you know Jasmine...</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/1">
+<h1>Sprockets fun!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/2">
+<h1>JST templates</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/3">
+<h1>templates/cats_view.jst.ejs</h1>
+
+<pre class="sh_html"><code>&lt;h1&gt;All the cats&lt;/h1&gt;
+&lt;h2&gt;Owned by &lt;%= owner %&gt;&lt;/h2&gt;
+&lt;ul id="#cats"&gt;&lt;/ul&gt;
+&lt;h3&gt;List generated: &lt;%= date %&gt;&lt;/h3&gt;</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/4">
+<h1>templates/cats_view.jst.hamljs</h1>
+
+<pre class="sh_haml"><code>%h1 All the cats
+%h2 Owned by #{owner}
+%ul#cats
+%h3 List generated: #{date}</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/5">
+<h2>(no highlighting for haml :( )</h2>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/6">
+<h1>backbone/views/cats_view.js.coffee</h1>
+
+<pre class="sh_coffeescript"><code>#= require templates/cats_view.jst.hamljs
+
+class window.CatsView extends Backbone.View
+  template: JST['templates/cats_view']
+
+  render: =&gt;
+    $(@el).html(this.template(this.templateData()))
+    this</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/7">
+<h1>EJS and Eco come as part of Sprockets</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/8">
+<h1>JHW supports <code>haml-sprockets</code> for <code>.hamljs</code></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/9">
+<pre class="sh_ruby"><code>gem 'jasmine-headless-webkit', '~&gt; 0.8.0'
+gem 'haml-sprockets'</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/04_sprockets/10">
+<h1>ERB files</h1>
+
+<ul>
+<li>app/assets/javascripts/application.js.coffee.erb</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/11">
+<h1>ERB integrates with the host application</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/12">
+<h1>Since it integrates...</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/13">
+<h1>Integration testing...</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/14">
+<h1>Not our domain!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/15">
+<h1><code>.erb</code> files are actively ignored</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/16">
+<h1>application.js.coffee.erb</h1>
+
+<pre class="sh_coffeescript"><code>window.Routes = &lt;%= Routes.to_json %&gt;
+window.CatTypes = &lt;%= CatType.all.to_json %&gt;
+window.DefaultCatName = &lt;%= CatName::DEFAULT %&gt;</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/17">
+<h1>Testing code that relies on these values?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/18">
+<h1>Mock and stub it in a helper!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/19">
+<h1>spec/javascripts/support/jasmine.yml</h1>
+
+<pre class="sh_yaml"><code>spec_dir: spec/javascripts
+helpers: [ "helpers/**.*" ]</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/20">
+<h1>Helpers load after code-under-test, but before specs</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/21">
+<h2>spec/javascripts/helpers/application_stubs.js.coffee</h2>
+
+<pre class="sh_coffeescript"><code>window.Routes = { what: 'ever' }
+window.CatTypes = [ 'cute', 'mean' ]
+window.DefaultCatName = "Fluffy"</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/04_sprockets/22">
+<h1>Gems with JavaScript assets</h1>
+
+<ul>
+<li><code>jquery-rails</code></li>
+<li><code>backbone-rails</code></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/23">
+<pre class="sh_coffeescript"><code>#= require jquery
+$(-&gt;
+    alert "this works"
+)</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/24">
+<h1>But now that we have Sprockets...</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/25">
+<h1>Jasmine libraries in gems!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/04_sprockets/26">
+<h1><code>jasmine-spec-extras</code></h1>
+
+<ul>
+<li><code>jasmine-jquery</code></li>
+<li><code>sinon</code></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/27">
+<h2>spec/javascripts/helpers/spec_helper.js.coffee</h2>
+
+<pre class="sh_coffeescript"><code>#= require jasmine-jquery
+#= require sinon</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/28">
+<h2>spec/javascripts/backbone/views/cats_view_spec.js.coffee</h2>
+
+<pre class="sh_coffeescript"><code>describe 'CatsView', -&gt;
+  it 'should fire the action', -&gt;
+    spy = sinon.spy()
+    view.bind('meow', spy)
+
+    view.$('button').trigger('click')
+
+    expect(spy.called).toBeTruthy()</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="intro/04_sprockets/29">
+<h2>spec/javascripts/backbone/views/cats_view_spec.js.coffee</h2>
+
+<pre class="sh_coffeescript"><code>describe 'CatsView', -&gt;
+  it 'should hit the server', -&gt;
+    data = [ 'cat' ]
+
+    @server.respondWith('GET', 'cats', this.validResponse(data))
+    view.$('button').trigger('click')
+    @server.respond()
+
+    expect(view.cats).toEqual(data)</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/30">
+<h1>More Jasmine libraries will be added later!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/04_sprockets/31">
+<h1>Any of these folders in a loaded gem get added to the asset path</h1>
+
+<ul>
+<li>app/assets/javascripts</li>
+<li>lib/assets/javascripts</li>
+<li>vendor/assets/javascripts</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/32">
+<h1>Very exciting!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/05_phantomjs/1">
+<h1>PhantomJS</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/05_phantomjs/2">
+<h1>Standalone Qt WebKit widget with JavaScript control</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/05_phantomjs/3">
+<h1>Jasmine runner source</h1>
+
+<ul>
+<li>JHW - Filesystem</li>
+<li>PhantomJS - (preferably) Server</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/05_phantomjs/4">
+<h1>Sinon.JS XHR Mocking can do a lot</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/05_phantomjs/5">
+<h1>Some things don't work</h1>
+
+<ul>
+<li>IFRAME</li>
+<li>Dynamically loading other JS</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/05_phantomjs/6">
+<h1>Use PhantomJS and <code>guard-jasmine</code></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/05_phantomjs/7">
+<h1>Doesn't bother me!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/1">
+<h1>Debugging</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/2">
+<h1>Most problems are debuggable</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/3">
+<h1>Qt WebKit widget has a big limitation...</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/4">
+<h1>No stack traces!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/5">
+<h1>Chrome, Safari, and other WebKit browsers implement their own stack traces</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/6">
+<h1>How do you debug problems like SyntaxErrors and other weird ones?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/06_debugging/7">
+<h1>Write out the runner file!</h1>
+
+<ul>
+<li><code>--keep</code></li>
+<li><code>runner_output</code></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/8">
+<h1>One-time shot?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/9">
+<h1><code>jasmine-headless-webkit --keep</code></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/10">
+<h1><code>--runner-out runner.html</code></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/11">
+<h1><code>open runner.html</code></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/12">
+<h1>Write it all the time?</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/13">
+<h2>spec/javascripts/support/jasmine.yml</h2>
+
+<pre class="sh_yaml"><code>runner_output: "runner.html"</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/14">
+<h1>Debugging Sprockets includes</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/15">
+<h1><code>jasmine-headless-webkit -l</code></h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/06_debugging/16">
+<h1>List all files that JHW will include, in order</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/07_conclusion/1">
+<h1>Conclusion</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/07_conclusion/2">
+<h1>For unit testing JavaScript</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/07_conclusion/3">
+<h1>In a real browser</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/07_conclusion/4">
+<h1>While supporting Rails conventions</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/07_conclusion/5">
+<h1>Try <code>jasmine-headless-webkit</code>!</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/07_conclusion/6">
+<h1>Learn more</h1>
+
+<ul>
+<li>http://johnbintz.github.com/jasmine-headless-webkit/</li>
+<li>http://tryjasmine.com/</li>
+</ul>
+
+</div>
+</div></div>
+
+</body>
+</html>
