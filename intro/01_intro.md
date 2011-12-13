@@ -55,6 +55,18 @@
 !SLIDE
 # Sprockets
 
+!SLIDE
+# Server-based testing tools
+
+* Jasmine gem
+* `jasmine-rails`
+
+!SLIDE
+# Compiles assets for testing
+
+!SLIDE
+# Harder to automate
+
 !SLIDE bullets incremental
 # Continuous testing
 

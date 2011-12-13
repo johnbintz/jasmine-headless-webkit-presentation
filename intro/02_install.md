@@ -5,6 +5,9 @@
 # Qt 4.7 or above
 
 !SLIDE
+# johnbintz.github.com/jasmine-headless-webkit
+
+!SLIDE
 # `gem install jasmine-headless-webkit`
 
 !SLIDE
@@ -13,15 +16,10 @@
     gem 'jasmine-headless-webkit', '~> 0.8.0'
 
 !SLIDE
-# Gemfile
-    @@@ ruby
-    gem 'jasmine-headless-webkit', '~> 0.8.0'
-
-    gem 'guard'
-    gem 'guard-jasmine-headless-webkit'
+# Rails 3.1 Application
 
 !SLIDE
-# Rails 3.1 Application
+# Legacy Jasmine gem support
 
 !SLIDE
 # spec/javascripts/support/jasmine.yml
@@ -37,17 +35,13 @@
     helpers: [ 'helpers/**/*' ]
 
 !SLIDE
-# Load Paths
+# JavaScript Load Paths
 
 !SLIDE
 # Sprockets and Jasmine load files differently
 
 !SLIDE
-    @@@ ruby
-    # ...somewhere in JHW...
-    env = Sprockets::Environment.new
-
-    env['application.js'].to_s #=> compiled JS
+# The Sprockets Way
 
 !SLIDE
 # spec/javascripts/support/jasmine.yml
@@ -75,12 +69,7 @@
     class window.CatsView extends GlobalView
 
 !SLIDE
-# Sprockets loading
-
-!SLIDE
-# Jasmine loading?
-
-!SLIDE
+# The Jasmine Way
     @@@ yaml
     src_dir: app/assets/javascripts
     src_files: [ '**/*' ]
