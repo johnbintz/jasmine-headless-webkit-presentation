@@ -115,8 +115,10 @@
 <h1>Not so great in testing in "real" browsers</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/9">
 <h1>Fake DOMs aren't quite the same</h1></div>
-</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/10">
-<h1>Integration testing tools</h1>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/10">
+<h2>(with the way I write tests, at least)</h2></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/11">
+<h1>Full-stack Integration testing tools</h1>
 
 <ul>
 <li>Capybara</li>
@@ -124,15 +126,15 @@
 <li>Selenium</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/11">
-<h1>Very thorough</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/12">
-<h1>Sloooooow</h1></div>
+<h1>Very thorough</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/13">
-<h1>Server-side dependency management</h1></div>
+<h1>Sloooooow</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/14">
-<h1>Sprockets</h1></div>
+<h1>Server-side dependency management</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/15">
+<h1>Sprockets</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/16">
 <h1>Server-based testing tools</h1>
 
 <ul>
@@ -140,29 +142,29 @@
 <li><code>jasmine-rails</code></li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/16">
-<h1>Compiles assets for testing</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/17">
+<h1>Compiles assets for testing</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/18">
 <h1>Harder to automate</h1></div>
-</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/18">
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/19">
 <h1>Continuous testing</h1>
 
 <ul>
 <li>Guard</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/01_intro/19">
-<h1>A JS testing tool that...</h1>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/20">
+<h1>What I wanted is a JS testing tool that...</h1>
 
 <ul>
 <li>Runs fast</li>
-<li>In a real browser</li>
+<li>In a real browser so I can use jQuery &amp; Backbone straight</li>
 <li>That supports modern Ruby webapp conventions</li>
 <li>Is built for continuous testing</li>
 </ul>
 </div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/20">
-<h1>Enter <code>jasmine-headless-webkit</code></h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_intro/21">
+<h1><code>jasmine-headless-webkit</code>!</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/1">
 <h1>Installing</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/2">
@@ -175,11 +177,23 @@
 <h1>Gemfile</h1>
 
 <pre class="sh_ruby"><code>gem 'jasmine-headless-webkit', '~&gt; 0.8.0'</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/6">
-<h1>Rails 3.1 Application</h1></div>
+</div><div class="slide" data-transition="none"><div class="content bullets incremental" ref="intro/02_install/6">
+<h1>Rails 3.1 Application</h1>
+
+<ul>
+<li>Asset pipeline using Sprockets</li>
+<li><code>spec/javascripts</code> holds tests</li>
+</ul>
+</div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/7">
-<h1>Legacy Jasmine gem support</h1></div>
+<h1>The Pivotal Labs <code>jasmine</code> gem</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/8">
+<h1>spec/javascripts/support/jasmine.yml</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/9">
+<h1>Supporting the Jasmine gem conventions</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/10">
+<h2>(easier to convert existing projects to JHW)</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/11">
 <h1>spec/javascripts/support/jasmine.yml</h1>
 
 <pre class="sh_yaml"><code>src_dir: app/assets/javascripts
@@ -191,13 +205,13 @@ src_files: [ '**/*' ]
 spec_dir: spec/javascripts
 spec_files: [ '**/*[Ss]pec.*' ]
 helpers: [ 'helpers/**/*' ]</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/9">
-<h1>JavaScript Load Paths</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/10">
-<h1>Sprockets and Jasmine load files differently</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/11">
-<h1>The Sprockets Way</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/12">
+<h1>JavaScript Load Paths</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/13">
+<h1>Sprockets and Jasmine load files differently</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/14">
+<h1>The Sprockets Way</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/15">
 <h1>spec/javascripts/support/jasmine.yml</h1>
 
 <pre class="sh_yaml"><code>src_dir: app/assets/javascripts
@@ -205,19 +219,19 @@ asset_paths:
 - lib/assets/javascripts
 - vendor/assets/javascripts
 spec_dir: spec/javascripts</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/13">
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/16">
 <pre class="sh_ruby"><code># ...somewhere in JHW...
 env.append_path "app/assets/javascripts"
 env.append_path "lib/assets/javascripts"
 env.append_path "vendor/assets/javascripts"
 env.append_path "spec/javascripts"</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/14">
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/17">
 <pre class="sh_javascript"><code>//= require backbone/models/cat
 //= require backbone/collections/cats
 //= require backbone/views/global_view
 
 class window.CatsView extends GlobalView</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/15">
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/18">
 <h1>The Jasmine Way</h1>
 
 <pre class="sh_yaml"><code>src_dir: app/assets/javascripts
@@ -226,13 +240,13 @@ src_files: [ '**/*' ]
 spec_dir: spec/javascripts
 spec_files: [ '**/*[Ss]pec.*' ]
 helpers: [ 'helpers/**/*' ]</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/16">
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/19">
 <pre class="sh_ruby"><code>Dir["app/assets/javascripts/**/*"]
 Dir["spec/javascripts/**/*[Ss]pec.*"]
 Dir["spec/javascripts/helpers/**/*"]</code></pre></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/17">
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/20">
 <h1>JHW ensures that no file is loaded twice</h1></div>
-</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/18">
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/02_install/21">
 <h1>Ensures Sprockets dependencies are loaded in the right order</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/1">
 <h1>Writing Jasmine Tests</h1></div>
@@ -290,8 +304,14 @@ end</code></pre></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/9">
 <h1>Plenty of resources to learn Jasmine itself</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/10">
-<h1>tryjasmine.com</h1></div>
+<h1>pivotal.github.com/jasmine</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/11">
+<h1>tryjasmine.com</h1></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/12">
+<h1>For Backbone and Sinon.js</h1>
+
+<h2>tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html</h2></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/03_jasmine/13">
 <h1>But once you know Jasmine...</h1></div>
 </div><div class="slide" data-transition="none"><div class="content" ref="intro/04_sprockets/1">
 <h1>Sprockets fun!</h1></div>
@@ -519,8 +539,10 @@ window.DefaultCatName = "Fluffy"</code></pre></div>
 <h1>Learn more</h1>
 
 <ul>
-<li>http://johnbintz.github.com/jasmine-headless-webkit/</li>
-<li>http://tryjasmine.com/</li>
+<li>johnbintz.github.com/jasmine-headless-webkit</li>
+<li>pivotal.github.com/jasmine</li>
+<li>tryjasmine.com</li>
+<li>tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html</li>
 </ul>
 </div>
 </div></div>
