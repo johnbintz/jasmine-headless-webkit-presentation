@@ -65,7 +65,14 @@
 # Plenty of resources to learn Jasmine itself
 
 !SLIDE
+# pivotal.github.com/jasmine
+
+!SLIDE
 # tryjasmine.com
+
+!SLIDE
+# For Backbone and Sinon.js
+## tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html
 
 !SLIDE
 # But once you know Jasmine...

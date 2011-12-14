@@ -15,11 +15,23 @@
     @@@ ruby
     gem 'jasmine-headless-webkit', '~> 0.8.0'
 
-!SLIDE
+!SLIDE bullets incremental
 # Rails 3.1 Application
 
+* Asset pipeline using Sprockets
+* `spec/javascripts` holds tests
+
 !SLIDE
-# Legacy Jasmine gem support
+# The Pivotal Labs `jasmine` gem
+
+!SLIDE
+# spec/javascripts/support/jasmine.yml
+
+!SLIDE
+# Supporting the Jasmine gem conventions
+
+!SLIDE
+## (easier to convert existing projects to JHW)
 
 !SLIDE
 # spec/javascripts/support/jasmine.yml

@@ -36,8 +36,11 @@
 !SLIDE
 # Fake DOMs aren't quite the same
 
+!SLIDE
+## (with the way I write tests, at least)
+
 !SLIDE bullets incremental
-# Integration testing tools
+# Full-stack Integration testing tools
 
 * Capybara
 * Cucumber
@@ -72,14 +75,14 @@
 
 * Guard
 
-!SLIDE bullets incremental
-# A JS testing tool that...
+!SLIDE
+# What I wanted is a JS testing tool that...
 
 * Runs fast
-* In a real browser
+* In a real browser so I can use jQuery & Backbone straight
 * That supports modern Ruby webapp conventions
 * Is built for continuous testing
 
 !SLIDE
-# Enter `jasmine-headless-webkit`
+# `jasmine-headless-webkit`!
 

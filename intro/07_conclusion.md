@@ -16,6 +16,8 @@
 !SLIDE bullets incremental
 # Learn more
 
-* http://johnbintz.github.com/jasmine-headless-webkit/
-* http://tryjasmine.com/
+* johnbintz.github.com/jasmine-headless-webkit
+* pivotal.github.com/jasmine
+* tryjasmine.com
+* tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html
 
